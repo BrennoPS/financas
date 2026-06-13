@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(command -v dotnet)",
+      "Bash(dotnet --version)",
+      "Bash(command -v sqlite3)",
+      "Bash(dotnet build *)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(grep -viE \"sqlite|table|expenses|CREATE|index|TEXT|INTEGER|REAL|^Id$|Description|Amount|Category|Date|IsFixed|FixedEndDate\")",
+      "Bash(dotnet --list-sdks)",
+      "Bash(dotnet --list-runtimes)",
+      "PowerShell(winget install --id Microsoft.DotNet.SDK.10 -e --accept-source-agreements --accept-package-agreements --disable-interactivity)",
+      "Bash(\"/c/Program Files/dotnet/dotnet\" --list-sdks)",
+      "Bash(\"/c/Program Files/dotnet/dotnet\" --list-runtimes)",
+      "Bash(\"/c/Program Files/dotnet/dotnet\" restore)",
+      "Bash(\"/c/Program Files/dotnet/dotnet\" build -nologo -clp:ErrorsOnly)",
+      "Bash(curl -s -X POST http://localhost:5000/__shutdown)",
+      "Bash(pkill -f \"FinanceControl\")",
+      "Bash(pkill -f \"dotnet run\")",
+      "Bash(\"/c/Program Files/dotnet/dotnet\" publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish -nologo)",
+      "Read(//c/Users/Breno/.claude/projects/c--Projects-FinanceControl/**)",
+      "Read(//c/Users/Breno/.claude/projects/c--Projects-FinanceControl/memory/**)",
+      "Bash(command -v node)",
+      "Bash(command -v npm)",
+      "Bash(npm --version)",
+      "PowerShell(winget install --id OpenJS.NodeJS.LTS -e --accept-source-agreements --accept-package-agreements --disable-interactivity)",
+      "PowerShell(Get-Process FinanceControl -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force)",
+      "PowerShell(\"done\")",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\\\\n\" -X POST http://localhost:5000/api/expenses -H \"Content-Type: application/json\" -d '{\"description\":\"Almoço Outback\",\"amount\":89.9,\"category\":0,\"date\":\"2026-06-13\",\"isFixed\":false,\"fixedEndDate\":null}')",
+      "Bash(curl -s http://localhost:5000/api/month/2026/6)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\\\\n\" -X POST http://localhost:5000/api/expenses -H \"Content-Type: application/json\" -d '{\"description\":\"Mercado semana\",\"amount\":250.50,\"category\":1,\"date\":\"2026-06-05\",\"isFixed\":false,\"fixedEndDate\":null}')",
+      "Bash(printf '{\"description\":\"Almo\\\\\\\\u00e7o Outback\",\"amount\":89.9,\"category\":0,\"date\":\"2026-06-13\",\"isFixed\":false,\"fixedEndDate\":null}')",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\\\\n\" -X POST http://localhost:5000/api/expenses -H \"Content-Type: application/json\" --data-binary @/tmp/exp.json)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" -X DELETE http://localhost:5000/api/expenses/2)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" -X DELETE http://localhost:5000/api/expenses/1)",
+      "Bash(curl -s http://localhost:5000/api/year/2026)"
+    ]
+  }
+}
