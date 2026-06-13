@@ -1,47 +1,48 @@
-# Usar no celular (iPhone e Android) — pelo Wi-Fi, sem publicar nada
+# Controle Financeiro — instalar no celular (offline, sem PC)
 
-O app roda no **PC** e você acessa pelo **celular no mesmo Wi-Fi**. Seus dados
-ficam guardados no PC (arquivo `finance.db`), então nada vai pra internet.
+**Link do app:** https://brennops.github.io/financas/
 
-> Funciona com o **PC ligado** e celular no **mesmo Wi-Fi**. Não abre na rua nem
-> com o PC desligado (pra isso seria preciso publicar — veja o fim).
-
----
-
-## Passo 1 — Ligar o app no PC
-Dê dois cliques em **`publish\Iniciar.bat`**.
-Vai abrir uma janela preta mostrando um endereço assim:
-
-```
-Celular: http://192.168.0.113:5000   (mesmo Wi-Fi)
-```
-
-Anote esse endereço (o número pode ser diferente no seu caso).
-
-## Passo 2A — iPhone (iOS)
-1. Conecte o iPhone no **mesmo Wi-Fi** do PC.
-2. Abra o **Safari** e digite o endereço (ex.: `http://192.168.0.113:5000`).
-3. O app abre. Para criar o ícone: toque em **Compartilhar** (quadradinho com seta
-   pra cima) → **"Adicionar à Tela de Início"** → **Adicionar**.
-4. Agora é só tocar no ícone **Finanças** (com o PC ligado) que ele abre.
-
-## Passo 2B — Android
-1. Conecte o celular no **mesmo Wi-Fi** do PC.
-2. Abra o **Chrome** e digite o endereço.
-3. Menu **⋮** → **"Adicionar à tela inicial"**.
+O app abre **offline, em qualquer lugar** (Wi-Fi, dados móveis, modo avião) depois de
+instalado. Seus dados ficam **só no seu celular** — nada vai pra internet.
 
 ---
 
-## Bom saber
-- Seus 3 fixos (Paramount, Claro, Internet) já estão cadastrados. Toque em
-  **"Entrou"** para informar a receita do mês e ver o **"Sobrou"**.
-- **Backup:** seus dados são o arquivo **`publish\finance.db`**. Copie ele para um
-  pendrive/nuvem de vez em quando e está salvo.
-- **Se o endereço parar de funcionar:** o roteador pode ter trocado o IP do PC.
-  Abra de novo o `Iniciar.bat` e veja o novo endereço na janela preta.
-  (Dá pra fixar o IP do PC no roteador pra nunca mudar — me peça que eu te ajudo.)
+## iPhone (iOS) — instalar
+1. Abra o link **no Safari**: https://brennops.github.io/financas/
+2. Toque no botão **Compartilhar** (quadradinho com a seta pra cima, embaixo).
+3. Role e toque em **"Adicionar à Tela de Início"**.
+4. Toque em **Adicionar** (canto superior direito).
+5. Pronto! Abra pelo ícone **Finanças**. A partir daí funciona **sem internet e sem PC**.
 
-## E se um dia quiser usar SEM o PC (offline, na rua)?
-Aí sim seria preciso **publicar** o app uma vez (grátis) num endereço HTTPS — só o
-app vazio vai pra internet, seus dados continuam só no aparelho. É só me avisar que
-eu preparo.
+> Tem que ser o **Safari** (no iPhone só ele instala PWA). Faça isso 1x com internet;
+> depois abre offline pra sempre.
+
+## Android — instalar
+1. Abra o link **no Chrome**: https://brennops.github.io/financas/
+2. Aparece **"Instalar app"** (ou menu **⋮** → **"Instalar app"**).
+3. Confirme. Ícone **Finanças** na tela inicial, abre offline.
+
+---
+
+## Usando
+- Seus 3 fixos (Paramount, Claro, Internet) já vêm cadastrados.
+- Toque em **"Entrou"** para informar a receita do mês → o app mostra o **"Sobrou"**.
+- Botão **+** adiciona gastos (marque "fixo" se repete todo mês).
+- Aba **Histórico**: gastos por ano, mês e dia.
+
+## Backup (importante!)
+Como os dados ficam só no celular, faça backup de vez em quando:
+- Aba **Ajustes** (engrenagem) → **Exportar** → salva um arquivo. Guarde no e-mail/nuvem.
+- Trocou de celular? Instale o app no novo e use **Ajustes → Importar** com esse arquivo.
+
+## Atualizações
+Se eu melhorar o app depois, o link é o mesmo e ele **se atualiza sozinho** na próxima
+vez que abrir com internet.
+
+---
+
+### Detalhes técnicos (pra referência)
+- Repositório: https://github.com/BrennoPS/financas (público — só o código, sem dados).
+- Hospedagem: GitHub Pages (grátis). Site servido de `main` / pasta `docs`.
+- Para reconstruir após mudar o código: `cd client && npm run build` (gera `docs/`),
+  depois `git add -A && git commit && git push`.
